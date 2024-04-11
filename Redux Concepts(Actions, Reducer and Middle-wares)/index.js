@@ -8,6 +8,7 @@ const incByAmount = 'incrementByAmount'
 
 const store = createStore(reducer, applyMiddleware(logger.default))
 
+
 const history = []
 
 //reducer
