@@ -1,6 +1,6 @@
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 
-const store = createStore(reducer)
+const store = createStore(reducer, applyMiddleware())
 
 const history = []
 
