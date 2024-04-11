@@ -10,6 +10,12 @@ function reducer(state = {amount: 0}, action){
   if(action.type === 'increment'){
     return {amount: state.amount + action.payload}
   }
+  if(action.type === 'decrement'){
+    return {amount: state.amount + action.payload}
+  }
+  if(action.type === 'incrementByAmount'){
+    return {amount: state.amount + action.payload}
+  }
   return state
 }
 
@@ -22,8 +28,8 @@ store.subscribe(()=>{
 })
 
 setInterval(()=>{
-  store.dispatch({type: 'increment', payload: 1})
-},5000)
+  store.dispatch({type: 'incrementByAmount', payload: 5})
+},2000)
 
 
 
