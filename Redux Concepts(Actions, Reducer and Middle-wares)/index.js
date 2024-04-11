@@ -8,10 +8,10 @@ const history = []
 //reducer
 function reducer(state = {amount: 0}, action){
   if(action.type === 'increment'){
-    return {amount: state.amount + action.payload}
+    return {amount: state.amount + 1}
   }
   if(action.type === 'decrement'){
-    return {amount: state.amount + action.payload}
+    return {amount: state.amount - action.payload}
   }
   if(action.type === 'incrementByAmount'){
     return {amount: state.amount + action.payload}
@@ -22,13 +22,26 @@ function reducer(state = {amount: 0}, action){
 
 //global state
 
-store.subscribe(()=>{
-  history.push(store.getState())
-  console.log(history)
-})
+// store.subscribe(()=>{
+//   history.push(store.getState())
+//   console.log(history)
+// })
+
+//Action Creators
+function increment(){
+  return {type: 'increment'}
+}
+function decrement(value){
+  return {type: 'decrement', payload: value}
+}
+function incrementByAmount(type, value){
+  return {type: type, payload: value}
+}
 
 setInterval(()=>{
-  store.dispatch({type: 'incrementByAmount', payload: 5})
+  // store.dispatch(increment())
+  // store.dispatch(decrement(2))
+  store.dispatch(incrementByAmount('incrementByAmount', 4))
 },2000)
 
 
