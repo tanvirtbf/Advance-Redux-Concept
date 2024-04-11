@@ -7,7 +7,7 @@ const history = []
 //reducer
 function reducer(state = {amount: 0}, action){
   if(action.type === 'increment'){
-    state.amount += action.payload
+    return {amount: state.amount + action.payload}
   }
   return state
 }
@@ -16,9 +16,13 @@ function reducer(state = {amount: 0}, action){
 //global state
 
 store.subscribe(()=>{
-  console.log(store.getState())
+  history.push(store.getState())
+  console.log(history)
 })
 
+setInterval(()=>{
+  store.dispatch({type: 'increment', payload: 1})
+},1000)
 
-store.dispatch({type: 'increment', payload: 2})
+
 
