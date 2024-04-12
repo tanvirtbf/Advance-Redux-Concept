@@ -3,6 +3,20 @@ export const DELETE_CART_ITEM = "cart/delete";
 export const INCREASE_CART_ITEM = "cart/increaseItem";
 export const DECREASE_CART_ITEM = "cart/decreaseItem";
 
+export function addCartItem(productId, amount){
+  return {type: ADD_CART_ITEM, payload: {productId: productId, amount: amount}}
+}
+export function deleteCartItem(productId){
+  return {type: DELETE_CART_ITEM, payload: {productId: productId}}
+}
+export function increaseCartItem(productId,amount){
+  return {type: INCREASE_CART_ITEM, payload: {productId: productId, amount: amount}}
+}
+export function decreaseCartItem(productId,amount){
+  return {type: DECREASE_CART_ITEM, payload: {productId: productId, amount: amount}}
+}
+
+
 export default function cartReducer(state = [], action) {
   switch (action.type) {
     case ADD_CART_ITEM:

@@ -1,5 +1,5 @@
 5888
-63D:\Redux Coder Dost\Redux with React\dist\index.59e2d73e.js.map133573783726762200 0
+63D:\Redux Coder Dost\Redux with React\dist\index.59e2d73e.js.map133573793299910804 0
 83D:\Redux Coder Dost\Redux with React\node_modules\domelementtype\lib\esm\index.d.ts133573684218267944 0
 83D:\Redux Coder Dost\Redux with React\node_modules\@swc\helpers\_\index\package.json133573684230351157 0
 72D:\Redux Coder Dost\Redux with React\node_modules\@swc\core\CHANGELOG.md133573684218952184 0
@@ -24,7 +24,7 @@
 70D:\Redux Coder Dost\Redux with React\node_modules\.bin\detect-libc.ps1133573684236600344 0
 75D:\Redux Coder Dost\Redux with React\node_modules\is-arrayish\.editorconfig133573684217153748 0
 99D:\Redux Coder Dost\Redux with React\node_modules\@babel\highlight\node_modules\ansi-styles\license133573684214847958 0
-52D:\Redux Coder Dost\Redux with React\store\script.js133573779037327600 0
+52D:\Redux Coder Dost\Redux with React\store\script.js133573793354780644 0
 104D:\Redux Coder Dost\Redux with React\node_modules\csso\node_modules\css-tree\lib\syntax\atrule\import.js133573684228449890 0
 42D:\Redux Coder Dost\Redux with React\store133573710733653960 1
 121D:\Redux Coder Dost\Redux with React\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\parser\sequence.js133573684226873187 0
@@ -57,7 +57,7 @@
 97D:\Redux Coder Dost\Redux with React\node_modules\caniuse-lite\data\features\css-focus-visible.js133573684228114792 0
 96D:\Redux Coder Dost\Redux with React\node_modules\caniuse-lite\data\features\css-nth-child-of.js133573684228747925 0
 131D:\Redux Coder Dost\Redux with React\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\syntax\pseudo\nth-of-type.js133573684226103312 0
-41D:\Redux Coder Dost\Redux with React\dist133573783726782746 1
+41D:\Redux Coder Dost\Redux with React\dist133573793299925156 1
 57D:\Redux Coder Dost\Redux with React\node_modules\is-json133573684216936876 1
 72D:\Redux Coder Dost\Redux with React\node_modules\picomatch\CHANGELOG.md133573684218279247 0
 83D:\Redux Coder Dost\Redux with React\node_modules\css-tree\lib\syntax\node\index.js133573684228758736 0
@@ -92,7 +92,7 @@
 107D:\Redux Coder Dost\Redux with React\node_modules\dom-serializer\node_modules\entities\lib\maps\decode.json133573684217138837 0
 78D:\Redux Coder Dost\Redux with React\node_modules\css-tree\cjs\lexer\Lexer.cjs133573684225200380 0
 88D:\Redux Coder Dost\Redux with React\node_modules\svgo\plugins\convertEllipseToCircle.js133573684223720988 0
-57D:\Redux Coder Dost\Redux with React\store\cartReducer.js133573782731149748 0
+57D:\Redux Coder Dost\Redux with React\store\cartReducer.js133573790601564138 0
 71D:\Redux Coder Dost\Redux with React\node_modules\semver\internal\re.js133573684222773587 0
 98D:\Redux Coder Dost\Redux with React\node_modules\@swc\helpers\_\_array_like_to_array\package.json133573684228484380 0
 70D:\Redux Coder Dost\Redux with React\node_modules\ansi-styles\index.js133573684214170771 0
@@ -126,7 +126,7 @@
 86D:\Redux Coder Dost\Redux with React\node_modules\svgo\plugins\cleanupNumericValues.js133573684223527879 0
 69D:\Redux Coder Dost\Redux with React\node_modules\css-tree\cjs\syntax133573684224955094 1
 91D:\Redux Coder Dost\Redux with React\node_modules\caniuse-lite\data\features\geolocation.js133573684230808131 0
-61D:\Redux Coder Dost\Redux with React\store\wishlistReducer.js133573783726387461 0
+61D:\Redux Coder Dost\Redux with React\store\wishlistReducer.js133573792722423593 0
 92D:\Redux Coder Dost\Redux with React\node_modules\lmdb\dependencies\lz4\lib\liblz4-dll.rc.in133573684227181773 0
 68D:\Redux Coder Dost\Redux with React\node_modules\.package-lock.json133573684242037778 0
 69D:\Redux Coder Dost\Redux with React\node_modules\semver\package.json133573684223637019 0
@@ -5886,4 +5886,4 @@
 65D:\Redux Coder Dost\Redux with React\node_modules\.bin\semver.ps1133573684236600344 0
 59D:\Redux Coder Dost\Redux with React\node_modules\.bin\svgo133573684236611634 0
 81D:\Redux Coder Dost\Redux with React\node_modules\.bin\update-browserslist-db.cmd133573684236600344 0
-59D:\Redux Coder Dost\Redux with React\dist\index.59e2d73e.js133573783726732270 0
+59D:\Redux Coder Dost\Redux with React\dist\index.59e2d73e.js133573793299895986 0

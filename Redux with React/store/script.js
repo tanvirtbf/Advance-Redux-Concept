@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from 'redux';
-import cartReducer, { ADD_CART_ITEM, DECREASE_CART_ITEM, DELETE_CART_ITEM, INCREASE_CART_ITEM } from './cartReducer';
-import wishlistReducer, { ADDWISHLIST, DELETEWISHLIST } from './wishlistReducer';
+import cartReducer, { ADD_CART_ITEM, addCartItem, DECREASE_CART_ITEM, decreaseCartItem, DELETE_CART_ITEM, deleteCartItem, INCREASE_CART_ITEM, increaseCartItem } from './cartReducer';
+import wishlistReducer, { ADDWISHLIST, addWishListItem, DELETEWISHLIST, deleteWishListItem } from './wishlistReducer';
 import productReducer from './productReducer';
 
 const reducer = combineReducers({
@@ -11,19 +11,19 @@ const reducer = combineReducers({
 
 export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.())
 
+store.dispatch(addCartItem(1,3))
+store.dispatch(addCartItem(2,5))
+store.dispatch(addCartItem(3,8))
+store.dispatch(addCartItem(4,11))
+store.dispatch(deleteCartItem(2))
 
-store.dispatch({type: ADD_CART_ITEM, payload: {productId: 1, amount: 3}})
-store.dispatch({type: ADD_CART_ITEM, payload: {productId: 2, amount: 5}})
-store.dispatch({type: ADD_CART_ITEM, payload: {productId: 3, amount: 8}})
-store.dispatch({type: ADD_CART_ITEM, payload: {productId: 4, amount: 11}})
-store.dispatch({type: DELETE_CART_ITEM, payload: {productId: 2}})
+store.dispatch(increaseCartItem(1,3))
+store.dispatch(decreaseCartItem(4,3))
 
-store.dispatch({type: INCREASE_CART_ITEM, payload: {productId: 3, amount: 2}})
-store.dispatch({type: DECREASE_CART_ITEM, payload: {productId: 4, amount: 4}})
+store.dispatch(addWishListItem(1))
+store.dispatch(addWishListItem(2))
+store.dispatch(addWishListItem(3))
+store.dispatch(addWishListItem(4))
 
-store.dispatch({type: ADDWISHLIST, payload: {productId: 1}})
-store.dispatch({type: ADDWISHLIST, payload: {productId: 2}})
-store.dispatch({type: ADDWISHLIST, payload: {productId: 3}})
-store.dispatch({type: ADDWISHLIST, payload: {productId: 4}})
-store.dispatch({type: DELETEWISHLIST, payload: {productId: 3}})
+store.dispatch(deleteWishListItem(2))
 
