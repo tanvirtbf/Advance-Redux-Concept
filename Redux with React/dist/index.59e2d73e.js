@@ -142,14 +142,14 @@
       this[globalName] = mainExports;
     }
   }
-})({"86oZd":[function(require,module,exports) {
+})({"gQYXg":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "b3c595598cfc62b9";
+module.bundle.HMR_BUNDLE_ID = "f6fba66359e2d73e";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -583,23 +583,19 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"6rimH":[function(require,module,exports) {
+},{}],"hDufu":[function(require,module,exports) {
 var _redux = require("redux");
-var _productsList = require("./store/productsList");
+var _productsList = require("./productsList");
+var _cartReducer = require("./cartReducer");
+var _wishlistReducer = require("./wishlistReducer");
 const initState = {
     products: (0, _productsList.products),
     cartItems: [],
     wishLists: []
 };
-const ADD_CART_ITEM = "cart/add";
-const DELETE_CART_ITEM = "cart/delete";
-const INCREASE_CART_ITEM = "cart/increaseItem";
-const DECREASE_CART_ITEM = "cart/decreaseItem";
-const ADDWISHLIST = "wishlist/add";
-const DELETEWISHLIST = "wishlist/delete";
 function reducer(state = initState, action) {
     switch(action.type){
-        case ADD_CART_ITEM:
+        case 0, _cartReducer.ADD_CART_ITEM:
             return {
                 ...state,
                 cartItems: [
@@ -607,12 +603,12 @@ function reducer(state = initState, action) {
                     action.payload
                 ]
             };
-        case DELETE_CART_ITEM:
+        case 0, _cartReducer.DELETE_CART_ITEM:
             return {
                 ...state,
                 cartItems: state.cartItems.filter((item)=>item.productId !== action.payload.productId)
             };
-        case INCREASE_CART_ITEM:
+        case 0, _cartReducer.INCREASE_CART_ITEM:
             return {
                 ...state,
                 cartItems: state.cartItems.map((item)=>{
@@ -623,7 +619,7 @@ function reducer(state = initState, action) {
                     return item;
                 })
             };
-        case DECREASE_CART_ITEM:
+        case 0, _cartReducer.DECREASE_CART_ITEM:
             return {
                 ...state,
                 cartItems: state.cartItems.map((item)=>{
@@ -634,7 +630,7 @@ function reducer(state = initState, action) {
                     return item;
                 })
             };
-        case ADDWISHLIST:
+        case 0, _wishlistReducer.ADDWISHLIST:
             return {
                 ...state,
                 wishLists: [
@@ -642,7 +638,7 @@ function reducer(state = initState, action) {
                     action.payload
                 ]
             };
-        case DELETEWISHLIST:
+        case 0, _wishlistReducer.DELETEWISHLIST:
             return {
                 ...state,
                 wishLists: state.wishLists.filter((item)=>item.productId !== action.payload.productId)
@@ -654,85 +650,85 @@ function reducer(state = initState, action) {
 const store = (0, _redux.createStore)(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 console.log(store);
 store.dispatch({
-    type: ADD_CART_ITEM,
+    type: (0, _cartReducer.ADD_CART_ITEM),
     payload: {
         productId: 1,
         amount: 3
     }
 });
 store.dispatch({
-    type: ADD_CART_ITEM,
+    type: (0, _cartReducer.ADD_CART_ITEM),
     payload: {
         productId: 2,
         amount: 5
     }
 });
 store.dispatch({
-    type: ADD_CART_ITEM,
+    type: (0, _cartReducer.ADD_CART_ITEM),
     payload: {
         productId: 3,
         amount: 8
     }
 });
 store.dispatch({
-    type: ADD_CART_ITEM,
+    type: (0, _cartReducer.ADD_CART_ITEM),
     payload: {
         productId: 4,
         amount: 11
     }
 });
 store.dispatch({
-    type: DELETE_CART_ITEM,
+    type: (0, _cartReducer.DELETE_CART_ITEM),
     payload: {
         productId: 2
     }
 });
 store.dispatch({
-    type: INCREASE_CART_ITEM,
+    type: (0, _cartReducer.INCREASE_CART_ITEM),
     payload: {
         productId: 3,
         amount: 3
     }
 });
 store.dispatch({
-    type: DECREASE_CART_ITEM,
+    type: (0, _cartReducer.DECREASE_CART_ITEM),
     payload: {
         productId: 4,
         amount: 4
     }
 });
 store.dispatch({
-    type: ADDWISHLIST,
+    type: (0, _wishlistReducer.ADDWISHLIST),
     payload: {
         productId: 1
     }
 });
 store.dispatch({
-    type: ADDWISHLIST,
+    type: (0, _wishlistReducer.ADDWISHLIST),
     payload: {
         productId: 2
     }
 });
 store.dispatch({
-    type: ADDWISHLIST,
+    type: (0, _wishlistReducer.ADDWISHLIST),
     payload: {
         productId: 3
     }
 });
 store.dispatch({
-    type: ADDWISHLIST,
+    type: (0, _wishlistReducer.ADDWISHLIST),
     payload: {
         productId: 4
     }
 });
 store.dispatch({
-    type: DELETEWISHLIST,
+    type: (0, _wishlistReducer.DELETEWISHLIST),
     payload: {
         productId: 3
     }
 });
 
-},{"redux":"anWnS","./store/productsList":"lBc2M"}],"anWnS":[function(require,module,exports) {
+},{"redux":"anWnS","./productsList":"lBc2M","./cartReducer":"kNTZ9","./wishlistReducer":"6sfb0"}],"anWnS":[function(require,module,exports) {
 // src/utils/formatProdErrorMessage.ts
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -1317,6 +1313,88 @@ const products = [
     }
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["86oZd","6rimH"], "6rimH", "parcelRequiref4ac")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kNTZ9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ADD_CART_ITEM", ()=>ADD_CART_ITEM);
+parcelHelpers.export(exports, "DELETE_CART_ITEM", ()=>DELETE_CART_ITEM);
+parcelHelpers.export(exports, "INCREASE_CART_ITEM", ()=>INCREASE_CART_ITEM);
+parcelHelpers.export(exports, "DECREASE_CART_ITEM", ()=>DECREASE_CART_ITEM);
+parcelHelpers.export(exports, "default", ()=>cartReducer);
+const ADD_CART_ITEM = "cart/add";
+const DELETE_CART_ITEM = "cart/delete";
+const INCREASE_CART_ITEM = "cart/increaseItem";
+const DECREASE_CART_ITEM = "cart/decreaseItem";
+function cartReducer() {
+    switch(action.type){
+        case ADD_CART_ITEM:
+            return {
+                ...state,
+                cartItems: [
+                    ...state.cartItems,
+                    action.payload
+                ]
+            };
+        case DELETE_CART_ITEM:
+            return {
+                ...state,
+                cartItems: state.cartItems.filter((item)=>item.productId !== action.payload.productId)
+            };
+        case INCREASE_CART_ITEM:
+            return {
+                ...state,
+                cartItems: state.cartItems.map((item)=>{
+                    if (item.productId === action.payload.productId) return {
+                        ...item,
+                        amount: item.amount + action.payload.amount
+                    };
+                    return item;
+                })
+            };
+        case DECREASE_CART_ITEM:
+            return {
+                ...state,
+                cartItems: state.cartItems.map((item)=>{
+                    if (item.productId === action.payload.productId) return {
+                        ...item,
+                        amount: item.amount - action.payload.amount
+                    };
+                    return item;
+                })
+            };
+        default:
+            return state;
+    }
+}
 
-//# sourceMappingURL=index.8cfc62b9.js.map
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6sfb0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ADDWISHLIST", ()=>ADDWISHLIST);
+parcelHelpers.export(exports, "DELETEWISHLIST", ()=>DELETEWISHLIST);
+parcelHelpers.export(exports, "default", ()=>wishlistReducer);
+const ADDWISHLIST = "wishlist/add";
+const DELETEWISHLIST = "wishlist/delete";
+function wishlistReducer() {
+    switch(action.type){
+        case ADDWISHLIST:
+            return {
+                ...state,
+                wishLists: [
+                    ...state.wishLists,
+                    action.payload
+                ]
+            };
+        case DELETEWISHLIST:
+            return {
+                ...state,
+                wishLists: state.wishLists.filter((item)=>item.productId !== action.payload.productId)
+            };
+        default:
+            return state;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["gQYXg","hDufu"], "hDufu", "parcelRequiref4ac")
+
+//# sourceMappingURL=index.59e2d73e.js.map

@@ -1,17 +1,15 @@
 import { createStore } from 'redux';
 import { products } from './productsList';
+import { ADD_CART_ITEM, DECREASE_CART_ITEM, DELETE_CART_ITEM, INCREASE_CART_ITEM } from './cartReducer';
+import { ADDWISHLIST, DELETEWISHLIST } from './wishlistReducer';
 const initState = {
   products: products,
   cartItems: [],
   wishLists: [],
 }
 
-const ADD_CART_ITEM = 'cart/add'
-const DELETE_CART_ITEM = 'cart/delete'
-const INCREASE_CART_ITEM = 'cart/increaseItem'
-const DECREASE_CART_ITEM = 'cart/decreaseItem'
-const ADDWISHLIST = 'wishlist/add'
-const DELETEWISHLIST = 'wishlist/delete'
+
+
 
 function reducer(state=initState, action){
   switch(action.type){
@@ -33,6 +31,10 @@ function reducer(state=initState, action){
         }
         return item;
       })}
+    case ADDWISHLIST: 
+      return {...state, wishLists: [...state.wishLists, action.payload]}
+    case DELETEWISHLIST:
+      return {...state, wishLists: state.wishLists.filter((item)=> item.productId !== action.payload.productId)}
     default: 
       return state;
   }
@@ -49,4 +51,10 @@ store.dispatch({type: DELETE_CART_ITEM, payload: {productId: 2}})
 
 store.dispatch({type: INCREASE_CART_ITEM, payload: {productId: 3, amount: 3}})
 store.dispatch({type: DECREASE_CART_ITEM, payload: {productId: 4, amount: 4}})
+
+store.dispatch({type: ADDWISHLIST, payload: {productId: 1}})
+store.dispatch({type: ADDWISHLIST, payload: {productId: 2}})
+store.dispatch({type: ADDWISHLIST, payload: {productId: 3}})
+store.dispatch({type: ADDWISHLIST, payload: {productId: 4}})
+store.dispatch({type: DELETEWISHLIST, payload: {productId: 3}})
 
