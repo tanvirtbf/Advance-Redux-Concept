@@ -1,6 +1,7 @@
 import axios from "axios";
 import { applyMiddleware, createStore } from "redux";
 import logger from "redux-logger";
+import { thunk } from "redux-thunk";
 
 //Action Name Constant
 const inc = "increment";
@@ -8,7 +9,7 @@ const dec = "decrement";
 const incByAmount = "incrementByAmount";
 const init = "init";
 
-const store = createStore(reducer, applyMiddleware(logger.default));
+const store = createStore(reducer, applyMiddleware(logger.default, thunk.default));
 
 const history = [];
 
