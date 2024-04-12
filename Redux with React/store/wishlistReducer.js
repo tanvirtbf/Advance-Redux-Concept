@@ -1,11 +1,16 @@
+
+
 export const ADDWISHLIST = 'wishlist/add'
 export const DELETEWISHLIST = 'wishlist/delete'
-export default function wishlistReducer(){
+
+
+
+export default function wishlistReducer(state = [], action){
   switch(action.type){
     case ADDWISHLIST: 
-      return {...state, wishLists: [...state.wishLists, action.payload]}
+      return [...state, action.payload]
     case DELETEWISHLIST:
-      return {...state, wishLists: state.wishLists.filter((item)=> item.productId !== action.payload.productId)}
+      return state.filter((item) => item.productId !== action.payload.productId)
     default: 
       return state;
   }
