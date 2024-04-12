@@ -1,30 +1,32 @@
-import {createStore, applyMiddleware} from 'redux'
-import logger from 'redux-logger'
+import axios from "axios";
+import { applyMiddleware, createStore } from "redux";
+import logger from "redux-logger";
 
 //Action Name Constant
-const inc = 'increment'
-const dec = 'decrement'
-const incByAmount = 'incrementByAmount'
+const inc = "increment";
+const dec = "decrement";
+const incByAmount = "incrementByAmount";
+const init = "init";
 
-const store = createStore(reducer, applyMiddleware(logger.default))
+const store = createStore(reducer, applyMiddleware(logger.default));
 
-
-const history = []
+const history = [];
 
 //reducer
-function reducer(state = {amount: 0}, action){
-  if(action.type === inc){
-    return {amount: state.amount + 1}
+function reducer(state = { amount: 0 }, action) {
+  switch (action.type) {
+    case init: 
+    return {amount: action.payload}
+    case inc:
+      return { amount: state.amount + 1 };
+    case dec:
+      return { amount: state.amount - action.payload };
+    case incByAmount:
+      return { amount: state.amount + action.payload };
+    default:
+      return state;
   }
-  if(action.type === dec){
-    return {amount: state.amount - action.payload}
-  }
-  if(action.type === incByAmount){
-    return {amount: state.amount + action.payload}
-  }
-  return state
 }
-
 
 //global state
 
@@ -33,22 +35,30 @@ function reducer(state = {amount: 0}, action){
 //   console.log(history)
 // })
 
+//Async API Call
+async function getUser(){
+  const {data} = await axios.get('http://localhost:3000/accounts/1')
+  console.log(data)
+}
+getUser()
+
 //Action Creators
-function increment(){
-  return {type: inc}
+async function initUser(value) {
+  const {data} = await axios.get('http://localhost:3000/accounts/1')
+  return { type: init, payload: value };
 }
-function decrement(value){
-  return {type: dec, payload: value}
+function increment() {
+  return { type: inc };
 }
-function incrementByAmount(type, value){
-  return {type: type, payload: value}
+function decrement(value) {
+  return { type: dec, payload: value };
+}
+function incrementByAmount(type, value) {
+  return { type: type, payload: value };
 }
 
-setInterval(()=>{
+setInterval(() => {
   // store.dispatch(increment())
   // store.dispatch(decrement(2))
-  store.dispatch(incrementByAmount(incByAmount, 4))
-},2000)
-
-
-
+  store.dispatch(initUser());
+}, 2000);
