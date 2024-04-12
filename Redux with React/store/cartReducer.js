@@ -16,7 +16,6 @@ export function decreaseCartItem(productId,amount){
   return {type: DECREASE_CART_ITEM, payload: {productId: productId, amount: amount}}
 }
 
-
 export default function cartReducer(state = [], action) {
   switch (action.type) {
     case ADD_CART_ITEM:

@@ -1,5 +1,3 @@
-
-
 export const ADDWISHLIST = 'wishlist/add'
 export const DELETEWISHLIST = 'wishlist/delete'
 

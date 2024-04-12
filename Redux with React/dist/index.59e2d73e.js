@@ -590,10 +590,10 @@ parcelHelpers.export(exports, "store", ()=>store);
 var _redux = require("redux");
 var _cartReducer = require("./cartReducer");
 var _cartReducerDefault = parcelHelpers.interopDefault(_cartReducer);
-var _wishlistReducer = require("./wishlistReducer");
-var _wishlistReducerDefault = parcelHelpers.interopDefault(_wishlistReducer);
 var _productReducer = require("./productReducer");
 var _productReducerDefault = parcelHelpers.interopDefault(_productReducer);
+var _wishlistReducer = require("./wishlistReducer");
+var _wishlistReducerDefault = parcelHelpers.interopDefault(_wishlistReducer);
 const reducer = (0, _redux.combineReducers)({
     products: (0, _productReducerDefault.default),
     cartItems: (0, _cartReducerDefault.default),
