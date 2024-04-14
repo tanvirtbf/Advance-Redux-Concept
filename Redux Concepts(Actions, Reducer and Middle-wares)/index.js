@@ -9,15 +9,18 @@ const dec = "decrement";
 const incByAmount = "incrementByAmount";
 const init = "init";
 
-const store = createStore(reducer, applyMiddleware(logger.default, thunk.default));
+const store = createStore(
+  reducer,
+  applyMiddleware(logger.default, thunk.default)
+);
 
 const history = [];
 
 //reducer
 function reducer(state = { amount: 0 }, action) {
   switch (action.type) {
-    case init: 
-    return {amount: action.payload}
+    case init:
+      return { amount: action.payload };
     case inc:
       return { amount: state.amount + 1 };
     case dec:
@@ -30,7 +33,6 @@ function reducer(state = { amount: 0 }, action) {
 }
 
 //global state
-
 // store.subscribe(()=>{
 //   history.push(store.getState())
 //   console.log(history)
@@ -44,9 +46,9 @@ async function getUser(){
 getUser()
 
 //Action Creators
-async function initUser(value) {
-  const {data} = await axios.get('http://localhost:3000/accounts/1')
-  return { type: init, payload: value };
+async function initUser(dispatch, getState) {
+  const { data } = await axios.get("http://localhost:3000/accounts/1");
+  dispatch({ type: init, payload: data.amount });
 }
 function increment() {
   return { type: inc };
@@ -59,7 +61,5 @@ function incrementByAmount(type, value) {
 }
 
 setInterval(() => {
-  // store.dispatch(increment())
-  // store.dispatch(decrement(2))
-  store.dispatch(initUser());
+  store.dispatch(initUser);
 }, 2000);

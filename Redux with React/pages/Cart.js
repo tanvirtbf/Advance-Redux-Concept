@@ -16,10 +16,10 @@ export default function Cart() {
           <div className="quantity">Quantity</div>
           <div className="total">Total</div>
         </div>
-        {cartItems.map(({ id, title, rating, price, imageUrl, amount }) => (
+        {cartItems.map(({ productId, title, rating, price, imageUrl, amount }) => (
           <CartItem
-            key={id}
-            productId = {id}
+            key={productId}
+            productId = {productId}
             title={title}
             price={price}
             amount={amount}

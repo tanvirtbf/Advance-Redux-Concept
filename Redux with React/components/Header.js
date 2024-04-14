@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 
 export default function Header() {
   const cartItems = useSelector((state) => state.cartItems)
+  console.log(cartItems)
   return (
     <header>
       <div className="header-contents">
@@ -14,7 +15,10 @@ export default function Header() {
         <Link className="cart-icon" to="/cart">
           <img src={CartIcon} alt="cart-icon" />
           <div className="cart-items-count">
-            {cartItems.reduce((prev, curr) => prev + curr.amount ,0)}
+            {cartItems.reduce(
+              (accumulator, currentItem) => accumulator + currentItem.amount,
+              0
+            )}
           </div>
         </Link>
       </div>
