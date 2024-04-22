@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
 const Controls = () => {
   const dispatch = useDispatch();
+  const inputRef = useRef();
   return (
     <>
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
@@ -19,19 +21,18 @@ const Controls = () => {
         >
           -1
         </button>
-      </div>{" "}
+      </div>
       <div className="d-grid gap-2 d-sm-flex justify-content-sm-center control-row">
-        <input type="text" placeholder="Enter Number" className="number-input"/>
-        <button
-          type="button"
-          className="btn btn-info"
-        >
+        <input
+          type="number"
+          placeholder="Enter Number"
+          className="number-input"
+          ref={inputRef}
+        />
+        <button type="button" className="btn btn-info" onClick={() => dispatch({type: 'ADD', payload: inputRef.current.value})}>
           ADD
         </button>
-        <button
-          type="button"
-          className="btn btn-danger"
-        >
+        <button type="button" className="btn btn-danger" onClick={() => dispatch({type: 'SUBTRACT', payload: inputRef.current.value})}>
           Subtract
         </button>
       </div>
