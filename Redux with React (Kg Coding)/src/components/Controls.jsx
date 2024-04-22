@@ -30,7 +30,11 @@ const Controls = () => {
         >
           -1
         </button>
-        <button type="button" className="btn btn-warning" onClick={() => dispatch({type: 'PRIVACY'})}>
+        <button
+          type="button"
+          className="btn btn-warning"
+          onClick={() => dispatch({ type: "PRIVACY" })}
+        >
           Privacy
         </button>
       </div>
