@@ -1,19 +1,22 @@
 import {createStore} from 'redux'
 
 const INITIAL_VALUE = {
-  counter: 0
+  counter: 0,
+  privacy: false,
 }
 
 const counterReducer = (store = INITIAL_VALUE, action) => {
   switch(action.type){
     case 'increment':
-      return {counter: store.counter + action.payload}
+      return {...store, counter: store.counter + action.payload}
     case 'decrement':
-      return {counter: store.counter - action.payload}
+      return {...store,counter: store.counter - action.payload}
     case 'ADD':
-      return {counter: store.counter + action.payload}
+      return {...store, counter: store.counter + action.payload}
     case 'SUBTRACT':
-      return {counter: store.counter - action.payload}
+      return {...store,counter: store.counter - action.payload}
+    case 'PRIVACY':
+      return {...store, privacy: !store.privacy }
     default:
       return store;
   }
