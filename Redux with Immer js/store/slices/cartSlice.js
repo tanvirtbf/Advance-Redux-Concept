@@ -12,7 +12,7 @@ export function addCartItem(productData) {
 }
 
 export function removeCartItem(productId) {
-  return { type: CART_ADD_ITEM, payload: { productId } };
+  return { type: CART_REMOVE_ITEM, payload: { productId } };
 }
 
 export function decreaseCartItemQuantity(productId) {
