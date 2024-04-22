@@ -11,7 +11,7 @@ const Controls = () => {
       >
         +1
       </button>
-      <button type="button" className="btn btn-success">
+      <button type="button" className="btn btn-success" onClick={() => dispatch({type: 'decrement', payload: 1})}>
         -1
       </button>
     </div>
